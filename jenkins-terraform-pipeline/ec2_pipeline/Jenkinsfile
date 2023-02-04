@@ -45,7 +45,7 @@ pipeline {
                 dir('jenkins-terraform-pipeline/ec2_pipeline/'){
                     script {
                         try {
-                            sh "terraform workspace new ${params.WORKSPACE}"
+                            bat "terraform workspace new ${params.WORKSPACE}"
                         } catch (err) {
                             sh "terraform workspace select ${params.WORKSPACE}"
                         }
